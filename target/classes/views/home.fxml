@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="650.0" prefWidth="850.0" spacing="10.0"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cl.elprofecarreno.app.controller.HomeController">
+   <children>
+      <HBox prefHeight="620.0" prefWidth="850.0" spacing="12.0">
+         <children>
+            <VBox prefWidth="320.0" spacing="10.0">
+               <children>
+                  <TitledPane animated="false" collapsible="false" prefWidth="320.0" text="Datos del material">
+                     <content>
+                        <GridPane hgap="8.0" vgap="8.0">
+                           <children>
+                              <Label text="Titulo:" />
+                              <TextField fx:id="txtTitulo" promptText="Ingrese titulo" GridPane.columnIndex="1" />
+                              <Label text="Anio:" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtAnio" promptText="Ingrese anio" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Copias:" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtCopias" promptText="Ingrese cantidad" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Tipo:" GridPane.rowIndex="3" />
+                              <ComboBox fx:id="cmbTipoMaterial" prefWidth="170.0" promptText="Seleccione tipo" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:value="Libro" />
+                                       <String fx:value="AudioLibro" />
+                                    </FXCollections>
+                                 </items>
+                              </ComboBox>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="tpLibro" animated="false" collapsible="false" disable="true" prefWidth="320.0" text="Datos del libro">
+                     <content>
+                        <GridPane hgap="8.0" vgap="8.0">
+                           <children>
+                              <Label text="Autor:" />
+                              <TextField fx:id="txtAutor" promptText="Ingrese autor" GridPane.columnIndex="1" />
+                              <Label text="Conservacion:" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="cmbEstado" prefWidth="170.0" promptText="Seleccione estado" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:value="Bueno" />
+                                       <String fx:value="Regular" />
+                                       <String fx:value="Malo" />
+                                    </FXCollections>
+                                 </items>
+                              </ComboBox>
+                              <CheckBox fx:id="chkReserva" mnemonicParsing="false" text="Disponible para reserva" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane fx:id="tpAudioLibro" animated="false" collapsible="false" disable="true" prefWidth="320.0" text="Datos del audiolibro">
+                     <content>
+                        <GridPane hgap="8.0" vgap="8.0">
+                           <children>
+                              <Label text="Duracion (min):" />
+                              <TextField fx:id="txtDuracion" promptText="Ingrese duracion" GridPane.columnIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </TitledPane>
+                  <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+               </children>
+            </VBox>
+            <VBox prefWidth="500.0" spacing="10.0">
+               <children>
+                  <TableView fx:id="tblMateriales" prefHeight="550.0" prefWidth="500.0">
+                     <columns>
+                        <TableColumn fx:id="colTitulo" prefWidth="110.0" text="TITULO" />
+                        <TableColumn fx:id="colAnio" prefWidth="55.0" text="ANIO" />
+                        <TableColumn fx:id="colTipo" prefWidth="75.0" text="TIPO" />
+                        <TableColumn fx:id="colDetalle" prefWidth="105.0" text="DETALLE" />
+                        <TableColumn fx:id="colCosto" prefWidth="75.0" text="COSTO" />
+                        <TableColumn fx:id="colDisponible" prefWidth="75.0" text="RESERVA" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" text="Eliminar seleccionado" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

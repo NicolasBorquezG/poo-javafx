@@ -1,0 +1,29 @@
+{
+  "materiales": [
+    {
+      "autor": "Gabriel Garcia Marquez",
+      "estadoConservacion": "Bueno",
+      "disponibleParaReserva": true,
+      "titulo": "Cien Anios de Soledad",
+      "anioPublicacion": 1967,
+      "copiasDisponibles": 3,
+      "tipo": "LIBRO"
+    },
+    {
+      "autor": "George Orwell",
+      "estadoConservacion": "Regular",
+      "disponibleParaReserva": false,
+      "titulo": "1984",
+      "anioPublicacion": 1949,
+      "copiasDisponibles": 2,
+      "tipo": "LIBRO"
+    },
+    {
+      "duracionMinutos": 120,
+      "titulo": "El Principito",
+      "anioPublicacion": 1943,
+      "copiasDisponibles": 1,
+      "tipo": "AUDIOLIBRO"
+    }
+  ]
+}
